@@ -21,6 +21,7 @@ body{background:#23262d;font-family:'Pretendard',-apple-system,sans-serif;color:
 .exo-app{max-width:420px;margin:0 auto;background:#FAFAFA;min-height:100vh;position:relative;overflow:hidden}
 .en{font-family:'Inter',sans-serif}
 @keyframes exoToastIn{from{opacity:0;transform:translate(-50%,16px) scale(.96)}to{opacity:1;transform:translate(-50%,0) scale(1)}}
+@keyframes exoUrgent{0%,100%{box-shadow:0 0 0 0 rgba(245,192,74,.55)}50%{box-shadow:0 0 0 9px rgba(245,192,74,0)}}
 input::placeholder{color:#aeb3bb}
 </style>
 </head>
@@ -30,16 +31,19 @@ input::placeholder{color:#aeb3bb}
 <!-- ============ S1 HERO ============ -->
 <section style="position:relative;height:88vh;min-height:620px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden">
   <img src="uploads/투시도 - 건물 포커싱.jpeg" alt="엑소디움 상도역 투시도" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;filter:brightness(1.22) contrast(1.04)">
-  <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(15,16,20,.92) 6%,rgba(15,16,20,.42) 40%,rgba(15,16,20,.04) 78%)"></div>
-  <div style="position:absolute;top:0;left:0;right:0;z-index:2;padding:24px 24px 0;display:flex;justify-content:center">
+  <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(15,16,20,.94) 6%,rgba(15,16,20,.62) 40%,rgba(15,16,20,.38) 78%,rgba(15,16,20,.3) 100%)"></div>
+  <div id="exo-hero-pill" style="position:absolute;top:0;left:0;right:0;z-index:2;padding:24px 24px 0;display:flex;justify-content:center">
     <div style="background:rgba(15,16,20,.62);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:11px 22px;color:#fff;font-weight:700;letter-spacing:.005em;text-align:center;font-size:21px;white-space:nowrap;box-shadow:0 6px 20px rgba(0,0,0,.28)">분양전환형 10년 민간임대 아파트</div>
   </div>
+  <h1 id="exo-hero-title" style="position:absolute;left:24px;right:24px;top:50%;transform:translateY(-50%);z-index:2;margin:0;color:#fff;font-weight:800;letter-spacing:-.02em;line-height:1.16;display:flex;flex-direction:column;align-items:stretch;text-align:center;gap:3px">
+    <span style="font-size:40px;white-space:nowrap">전세금&nbsp; 걱정 없이</span>
+    <span style="font-size:35px;white-space:nowrap">저렴하게 <span style="color:#F5C04A;text-shadow:0 2px 10px rgba(0,0,0,.45)">10년 거주</span></span>
+  </h1>
   <div style="position:relative;z-index:2;padding:0 24px 44px">
-    <h1 style="color:#fff;font-weight:800;letter-spacing:-.02em;line-height:1.16;display:flex;flex-direction:column;align-items:stretch;text-align:center;gap:3px">
-      <span style="font-size:40px;white-space:nowrap">전세금 인상 걱정 없이</span>
-      <span style="font-size:35px;white-space:nowrap">저렴하게 <span style="color:#F5C04A;text-shadow:0 2px 10px rgba(0,0,0,.45)">10년동안</span> 살다가</span>
-      <span style="font-size:30px;white-space:nowrap">확정 금액으로 내집 마련하세요!</span>
-    </h1>
+    <div id="exo-hero-sub" style="color:#fff;font-weight:800;letter-spacing:-.02em;line-height:1.16;display:flex;flex-direction:column;align-items:stretch;text-align:center;gap:3px">
+      <span style="font-size:40px;white-space:nowrap"><span style="color:#F5C04A;text-shadow:0 2px 10px rgba(0,0,0,.45)">확정 금액</span>으로</span>
+      <span style="font-size:40px;white-space:nowrap">내집 마련</span>
+    </div>
     <div style="margin-top:18px;display:flex;justify-content:center">
       <img src="uploads/logo.png" alt="엑소디움 상도역 로고" style="height:128px;width:auto;object-fit:contain">
     </div>
@@ -58,7 +62,7 @@ input::placeholder{color:#aeb3bb}
 
 <!-- ============ S3 두 숫자 비교 ============ -->
 <section style="background:#FAFAFA;padding:64px 24px 68px">
-  <h2 style="font-size:24px;line-height:1.34;font-weight:800;letter-spacing:-.02em;color:#16181D;text-align:center">주변 전세가보다 저렴하게 10년 거주</h2>
+  <h2 id="exo-s3-title" style="font-size:24px;line-height:1.34;font-weight:800;letter-spacing:-.02em;color:#16181D;text-align:center;display:flex;flex-direction:column;align-items:stretch"><span style="white-space:nowrap">주변 전세가보다 저렴하게 10년 거주</span></h2>
   <div style="margin-top:28px;display:flex;flex-direction:column;gap:12px">
     <div style="background:#fff;border:1px solid #e6e8ec;border-radius:14px;padding:20px 20px 18px">
       <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
@@ -90,7 +94,7 @@ input::placeholder{color:#aeb3bb}
 <!-- ============ S4 상품=해답 ============ -->
 <section style="background:#16181D;padding:0 0 66px;color:#fff">
   <div style="padding:54px 24px 0">
-    <h2 style="font-size:25px;line-height:1.34;font-weight:800;letter-spacing:-.02em;text-align:center">확정 금액으로 10년뒤 분양 전환</h2>
+    <h2 id="exo-s4-title" style="font-size:25px;line-height:1.34;font-weight:800;letter-spacing:-.02em;text-align:center;display:flex;flex-direction:column;align-items:stretch"><span style="white-space:nowrap">확정 금액으로 10년뒤 분양 전환</span></h2>
     <div style="margin-top:26px;display:flex;flex-direction:column;gap:11px">
       <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px">
         <div style="font-size:13.5px;color:#9aa0aa">50타입 가격</div>
@@ -125,7 +129,7 @@ input::placeholder{color:#aeb3bb}
 
 <!-- ============ S5 입지·미래가치 ============ -->
 <section style="background:#FAFAFA;padding:64px 24px 66px">
-  <h2 style="font-size:26px;line-height:1.34;font-weight:800;letter-spacing:-.02em;color:#16181D;text-align:center">입지가 자산 가치를 말해줍니다!</h2>
+  <h2 id="exo-s5-title" style="font-size:26px;line-height:1.34;font-weight:800;letter-spacing:-.02em;color:#16181D;text-align:center;display:flex;flex-direction:column;align-items:stretch"><span style="white-space:nowrap">입지가 자산 가치를 말해줍니다!</span></h2>
   <img src="uploads/입지-4d598c4e.jpeg" alt="엑소디움 상도역 입지 - 상도역 대상지 위치도" style="width:100%;height:auto;border-radius:14px;margin-top:24px;display:block">
   <div style="margin-top:24px;display:flex;flex-direction:column;gap:14px">
     <div style="background:#fff;border:1px solid #e6e8ec;border-radius:14px;padding:20px">
@@ -139,9 +143,9 @@ input::placeholder{color:#aeb3bb}
     <div style="background:linear-gradient(135deg,#F5C04A,#E9A82E);border-radius:14px;padding:22px;color:#3a2c05">
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px"><span class="en" style="font-size:12px;font-weight:700;color:#7a5a06;background:rgba(58,44,5,.14);padding:3px 9px;border-radius:6px">03</span><h3 style="font-size:16.5px;font-weight:800;color:#231a02">10년 후 예상 시세 차익?</h3></div>
       <div style="display:flex;flex-direction:column;gap:9px;margin-bottom:14px">
-        <div style="display:flex;justify-content:space-between;font-size:13.5px;color:#5c4906"><span>롯데캐슬파크엘 최근 실거래가</span><span class="en" style="color:#231a02;font-weight:700">약 20억</span></div>
-        <div style="display:flex;justify-content:space-between;font-size:13.5px;color:#5c4906"><span>e편한세상 상도노빌리티 최근 실거래가</span><span class="en" style="color:#231a02;font-weight:700">약 21억</span></div>
-        <div style="display:flex;justify-content:space-between;font-size:13.5px;color:#231a02;font-weight:700;padding-top:9px;border-top:1px solid rgba(58,44,5,.2)"><span>엑소디움 상도역 예상 확정금액</span><span class="en" style="text-align:right">12~13억<br><span style="font-size:11.5px;color:#7a5a06;font-weight:500;font-family:'Pretendard'">(84타입 기준)</span></span></div>
+        <div style="display:flex;justify-content:space-between;font-size:13.5px;color:#5c4906"><span>롯데캐슬파크엘 최근 실거래가</span><span class="en" style="color:#231a02;font-weight:700">20억</span></div>
+        <div style="display:flex;justify-content:space-between;font-size:13.5px;color:#5c4906"><span>e편한세상 상도노빌리티 최근 실거래가</span><span class="en" style="color:#231a02;font-weight:700">21억</span></div>
+        <div style="display:flex;justify-content:space-between;font-size:13.5px;color:#231a02;font-weight:700;padding-top:9px;border-top:1px solid rgba(58,44,5,.2)"><span>엑소디움 상도역 예상 확정금액</span><span class="en" style="text-align:right">12억<br><span style="font-size:11.5px;color:#7a5a06;font-weight:500;font-family:'Pretendard'">(84타입 기준)</span></span></div>
       </div>
     </div>
     <div style="background:#fff;border:1px solid #e6e8ec;border-radius:14px;padding:20px">
@@ -161,8 +165,7 @@ input::placeholder{color:#aeb3bb}
 <!-- ============ S6 자격·세금 혜택 ============ -->
 <section style="background:#16181D;padding:0 0 66px;color:#fff">
   <div style="padding:54px 24px 0">
-    <div class="en" style="color:#3D5AFE;font-size:12px;font-weight:600;letter-spacing:.12em;margin-bottom:14px">규제 무관 상품</div>
-    <h2 style="font-size:25px;line-height:1.38;font-weight:800;letter-spacing:-.02em;text-align:center">안할 이유도, 못할 이유도 없습니다!</h2>
+    <h2 id="exo-s6-title" style="font-size:25px;line-height:1.38;font-weight:800;letter-spacing:-.02em;text-align:center;display:flex;flex-direction:column;align-items:stretch"><span style="white-space:nowrap">안할 이유도, 못할 이유도 없습니다!</span></h2>
     <p style="color:#b6bbc4;font-size:15px;line-height:1.6;margin-top:14px;text-align:center">엑소디움 상도역은 규제 밖에 있는 상품입니다</p>
     <div style="margin-top:26px;display:flex;flex-direction:column;gap:11px">
       <div style="display:flex;gap:13px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:13px;padding:16px 18px"><div style="flex:none;width:22px;height:22px;border-radius:50%;background:#3D5AFE;display:flex;align-items:center;justify-content:center;font-size:13px;color:#fff;font-weight:700;margin-top:1px">✓</div><div><div style="font-size:15px;font-weight:600;color:#fff;line-height:1.4">청약통장·자격조건 불필요</div><div style="font-size:13.5px;color:#9aa0aa;line-height:1.55;margin-top:3px">만 19세 이상 누구나</div></div></div>
@@ -244,11 +247,11 @@ input::placeholder{color:#aeb3bb}
 <!-- ============ S9 CTA 폼 ============ -->
 <section id="exo-form" style="background:#16181D;padding:60px 24px 70px;color:#fff">
   <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:26px">
-    <div style="display:flex;align-items:center;gap:8px;background:rgba(61,90,254,.16);border:1px solid rgba(61,90,254,.35);border-radius:10px;padding:11px 14px;justify-content:center">
-      <span style="font-size:20px">⏱</span><span style="font-size:20px;font-weight:600;color:#a9b8ff">2차 모집 시 보증금 증액 예정</span>
+    <div style="background:linear-gradient(135deg,#F5C04A,#E9A82E);border:none;border-radius:12px;padding:14px 16px;animation:exoUrgent 2s ease-in-out infinite">
+      <div id="exo-s9-badge" style="display:flex;flex-direction:column;align-items:stretch;text-align:center"><span style="font-size:20px;font-weight:800;color:#231a02;white-space:nowrap">⏱ 2차 모집 시 보증금 증액 예정</span></div>
     </div>
   </div>
-  <h2 style="font-size:30px;line-height:1.36;font-weight:800;letter-spacing:-.02em;text-align:center">엑소디움 상도역은<br>지금이 가장 저렴합니다!</h2>
+  <h2 id="exo-s9-title" style="font-size:30px;line-height:1.36;font-weight:800;letter-spacing:-.02em;text-align:center;display:flex;flex-direction:column;align-items:stretch;gap:2px"><span style="white-space:nowrap">엑소디움 상도역은</span><span style="white-space:nowrap">지금이 가장 쌉니다!</span></h2>
   <div style="margin-top:30px;display:flex;flex-direction:column;gap:14px">
     <div>
       <label style="font-size:13px;color:#9aa0aa;display:block;margin-bottom:7px">이름 <span style="color:#7d93ff">*</span></label>
@@ -321,6 +324,38 @@ function gtag_report_conversion_form() {
       'send_to': 'AW-18289170520/MexYCNWfnMkcENiw-pBE'
   });
 }
+
+// ── 히어로/타이틀 자동 폭맞춤 ────────────────────────────────────────────────
+function fitHeroTitle() {
+  ['exo-hero-title', 'exo-hero-sub', 'exo-s3-title', 'exo-s4-title', 'exo-s5-title', 'exo-s6-title', 'exo-s9-title', 'exo-s9-badge'].forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const cw = el.clientWidth;
+    if (!cw) return;
+    [...el.children].forEach(span => {
+      span.style.fontSize = '100px';
+      const w = span.scrollWidth || 1;
+      const fs = Math.max(18, Math.floor(100 * cw / w * 10) / 10 - 0.3);
+      span.style.fontSize = fs + 'px';
+    });
+  });
+  const h1 = document.getElementById('exo-hero-title');
+  const pill = document.getElementById('exo-hero-pill');
+  const sub = document.getElementById('exo-hero-sub');
+  const sec = h1 && h1.closest('section');
+  if (h1 && pill && sub && sec) {
+    const secTop = sec.getBoundingClientRect().top;
+    const pillBottom = pill.getBoundingClientRect().bottom - secTop;
+    const subTop = sub.getBoundingClientRect().top - secTop;
+    const h = h1.offsetHeight;
+    const top = pillBottom + Math.max(0, (subTop - pillBottom - h) / 2);
+    h1.style.top = Math.round(top) + 'px';
+    h1.style.transform = 'none';
+  }
+}
+fitHeroTitle();
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitHeroTitle);
+window.addEventListener('resize', fitHeroTitle);
 
 const state = {
   plan: 0,
